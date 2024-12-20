@@ -1,14 +1,21 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
+  standalone: true,
+  imports: [FormsModule]
 })
 export class AppComponent {
-  title = 'my-web';
-  name: any;
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
+  inputName: string = '';
+  name: string = '';
+
+  updateName() {
+    this.name = this.inputName;
+  }
 }

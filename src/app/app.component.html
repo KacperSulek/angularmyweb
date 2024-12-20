@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>AngularJS Test</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-</head>
-<body>
-
-<div ng-app="">
-    <p>Input something in the input box:</p>
-    <p>Name : <input type="text" ng-model="name" placeholder="Enter name here"></p>
-    <h1>Hello {{name}}</h1>
+<div>
+  <p>Input something in the input box:</p>
+  <form (ngSubmit)="updateName()">
+      <p>Name : <input type="text" [(ngModel)]="inputName" name="inputName" placeholder="Enter name here"></p>
+      <button type="submit">Enter</button>
+  </form>
+  <h1>Hello {{name}}</h1>
 </div>
-
-</body>
-</html>
